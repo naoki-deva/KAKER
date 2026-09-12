@@ -1,14 +1,30 @@
+import { useState } from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
 import {AntDesign, MaterialIcons} from '@expo/vector-icons';
 
 const InputBox = () => {
+
+    const [newMessage, setNewMessage] = useState('');
+
+    const onSend = () =>{
+        console.warn("Sending a message", newMessage);
+
+        setNewMessage('');
+    }
+
     return(
         <View style={styles.container}>
+
             <AntDesign name='plus' size={20} color='royalblue' />
 
-            <TextInput style={styles.input} placeholder="Type your message..." />
+            <TextInput 
+            value={newMessage} 
+            onChangeText={setNewMessage} 
+            style={styles.input} 
+            placeholder="Type your message..." 
+            />
 
-            <MaterialIcons style={styles.send} name='send' size={16} color='white' />
+            <MaterialIcons onPress={onSend} style={styles.send} name='send' size={16} color='white' />
         </View>
     );
 };
