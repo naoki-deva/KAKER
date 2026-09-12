@@ -1,7 +1,7 @@
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar, StyleSheet, View } from 'react-native';
-import ChatsScreen from '@/components/screens/ChatsScreens';
 import ChatScreen from '@/components/screens/ChatScreen';
+import Navigator from '@/navigation';
 
 
 SplashScreen.preventAutoHideAsync();
@@ -11,7 +11,7 @@ SplashScreen.preventAutoHideAsync();
 export default function TabLayout() {
   return(
     <View style={styles.container}>
-      <ChatScreen />
+      <Navigator />
 
       <StatusBar/>
     </View>
