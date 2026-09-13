@@ -15,7 +15,11 @@ const ChatScreen = () => {
     }, [route.params.name]);
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.bg}>
+        <KeyboardAvoidingView 
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
+        keyboardVerticalOffset={Platform.OS === 'ios' ? '80' : '100'} 
+        style={styles.bg}
+        >
             <ImageBackground source={bg} style={styles.bg}>
                 <FlatList
                     data={messages}
