@@ -1,7 +1,7 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import EmptyView from '@/components/screens/EmptyView';
 import ChatsScreen from '@/components/screens/ChatsScreens';
-import { Ionicons, Entypo } from '@expo/vector-icons';
+import EmptyView from '@/components/screens/EmptyView';
+import { Entypo, Ionicons } from '@expo/vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,13 +32,13 @@ const MainTabNavigator = () => {
       <Tab.Screen 
       name="Chats" 
       component={ChatsScreen} 
-      options={{ 
+      options={({ navigation }) => ({ 
         tabBarIcon: ({color, size}) => (<Ionicons name="person" size={size} color={color} />),
         headerRight: () => (
-          <Entypo name="new-message" size={18} color={'royalblue'} style={{ marginRight: 10 }} />
+          <Entypo onPress={() => navigation.navigate('Contacts')} name="new-message" size={18} color={'royalblue'} style={{ marginRight: 10 }} />
         )
         
-       }}
+       })}
       />
 
       <Tab.Screen 
