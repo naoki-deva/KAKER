@@ -37,6 +37,7 @@ const MainTabNavigator = () => {
             'person',
             'person'
           ),
+          headerShown: true,
         }}
       />
 
@@ -48,7 +49,8 @@ const MainTabNavigator = () => {
           tabBarIcon: getTabIcon(
             'phone',
             'call',
-          )
+          ),
+          headerShown: true,
         }}
       />
 
@@ -60,7 +62,8 @@ const MainTabNavigator = () => {
           tabBarIcon: getTabIcon(
             'camera',
             'photo_camera',
-          )
+          ),
+          headerShown: true
         }}
       />
 
@@ -82,6 +85,7 @@ const MainTabNavigator = () => {
               style={{ marginRight: 10 }}
             />
           ),
+          headerShown: true,
         })}
       />
 
@@ -94,6 +98,7 @@ const MainTabNavigator = () => {
             type: 'sfSymbol',
             name: 'gearshape',
           },
+          headerShown: true,
         }}
       />
     </Tab.Navigator>
